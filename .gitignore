@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Secrets / local env
+.env
+.env.*
+
+# Local/machine state
+logs/
+data/
+.specify/feature.json

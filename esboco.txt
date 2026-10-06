@@ -1,0 +1,19 @@
+*A TAKTA é uma plataforma social criada para aproximar as pessoas das notícias por meio de interação, crítica, opinião e debate. A proposta é oferecer um ambiente em que os usuários não sejam apenas consumidores passivos de informação, mas participantes ativos das discussões geradas pelas notícias.*
+
+*Na plataforma, veículos de comunicação e organizações editoriais verificadas poderão publicar conteúdos jornalísticos, enquanto os usuários comuns poderão comentar, compartilhar, reagir e produzir críticas, inclusive em formato de vídeo, sempre relacionadas às notícias já existentes. Dessa forma, cada notícia pode se transformar em um espaço de discussão pública, permitindo que diferentes opiniões, interpretações e perspectivas sejam apresentadas pela comunidade.*
+
+*Essa dinâmica de interação também é essencial para preservar e estimular o senso crítico dos usuários. A TAKTA não pretende entregar uma interpretação pronta sobre cada notícia, nem substituir a análise humana por uma resposta automática da inteligência artificial. Ao entrar em contato com diferentes críticas, argumentos, reações e pontos de vista, o usuário continua exercitando sua própria capacidade de interpretar, questionar, comparar opiniões e formar conclusões.*
+
+*A experiência da TAKTA será organizada em três áreas principais. A página de Notícias reunirá as publicações dos veículos acompanhados pelo usuário. A página de Críticas concentrará reações, análises, comentários e vídeos produzidos pela comunidade a partir dessas notícias. Já a página de Populares apresentará os conteúdos com maior repercussão dentro da plataforma, podendo incluir tanto notícias quanto críticas e discussões dos usuários.*
+
+*Para garantir que esse ambiente de interação seja construído sobre informações mais confiáveis, a TAKTA contará com a FOP — Fact On Publication — uma inteligência artificial responsável por analisar as notícias antes que elas sejam publicadas na plataforma.*
+
+*A FOP verificará as principais afirmações presentes em uma notícia, buscará evidências externas e comparará essas evidências com o conteúdo submetido. A partir dessa análise, a notícia poderá ser classificada como suportada por evidências, refutada, inconclusiva ou baseada em evidências conflitantes.*
+
+*Notícias identificadas como falsas ou fortemente contraditas pelas evidências não serão distribuídas normalmente pela plataforma, enquanto conteúdos confiáveis poderão ser publicados e utilizados como base para as interações da comunidade. Em situações em que não houver evidências suficientes, a FOP deverá indicar a incerteza em vez de assumir automaticamente que a informação é falsa.*
+
+*Assim, o combate à fake news acontece como consequência da própria estrutura da TAKTA: antes que uma notícia se torne objeto de comentários, críticas, compartilhamentos e debates, ela passa por uma etapa de verificação. Isso reduz a possibilidade de que informações falsas sejam amplificadas pela comunidade e permite que as discussões ocorram a partir de uma base informacional mais confiável.*
+
+*Ao mesmo tempo, a existência dessa verificação prévia não elimina o papel das pessoas na interpretação da informação. A FOP atua sobre a confiabilidade factual da notícia, enquanto a comunidade continua responsável por discutir seus significados, impactos, consequências e diferentes perspectivas. Dessa forma, a inteligência artificial oferece suporte ao combate à desinformação sem retirar do usuário sua autonomia de pensamento.*
+
+*O objetivo da TAKTA, portanto, é criar uma rede social de notícias em que a tecnologia contribua para a confiabilidade da informação e a comunidade contribua para o desenvolvimento do pensamento crítico. A FOP ajuda a proteger o ambiente contra fake news, enquanto as interações entre os usuários mantêm viva a capacidade de questionar, argumentar, interpretar e construir opiniões próprias.*

@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cadasiso/takta/specs/001-fop-verificacao-alegacoes/contracts/verification-result.schema.json",
+  "title": "VerificationResult",
+  "description": "Resultado da verificacao da FOP (fluxo-ia-fop-v3): classificacao por alegacao, origem (agencia ou fluxo proprio), atribuicao, evidencias com fonte/data/postura, explicacao neutra, status de revisao e politica de nao bloqueio/retencao transitoria.",
+  "type": "object",
+  "required": ["verification_id", "noticia_id", "versao_texto", "status", "submitted_at", "publisher", "results", "review", "policy"],
+  "additionalProperties": false,
+  "properties": {
+    "verification_id": { "type": "string", "minLength": 1 },
+    "noticia_id": { "type": "string", "minLength": 1 },
+    "versao_texto": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "status": {
+      "type": "string",
+      "enum": ["processing", "pendente_revisao", "verificada", "publicada", "error"]
+    },
+    "submitted_at": { "type": "string", "format": "date-time" },
+    "completed_at": { "type": "string", "format": "date-time" },
+    "publisher": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" }
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim", "classification", "origem", "tipo_atribuicao", "evidence", "explanation", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "claim": { "type": "string", "minLength": 1 },
+          "classification": {
+            "type": "string",
+            "enum": ["supported", "refuted", "not_enough_evidence", "conflicting_evidence"]
+          },
+          "origem": { "type": "string", "enum": ["agencia", "fop"] },
+          "tipo_atribuicao": { "type": "string", "enum": ["fonte_citada", "declaracao", "nenhuma"] },
+          "atribuida_a": { "type": "string" },
+          "fonte_citada": { "type": "string" },
+          "sensivel_ao_tempo": { "type": "boolean" },
+          "ambigua": { "type": "boolean" },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "status": { "type": "string", "enum": ["final", "pendente_revisao"] },
+          "motivo": {
+            "type": "string",
+            "enum": ["agencias_divergem", "evidencias_divergem", "baixa_confianca", "ambigua", "numerico_divergente", "mudanca_veredito"]
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["excerpt", "source", "published_at", "stance", "decisive"],
+              "additionalProperties": false,
+              "properties": {
+                "excerpt": { "type": "string", "minLength": 1 },
+                "source": {
+                  "type": "object",
+                  "required": ["name", "url"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": { "type": "string" },
+                    "url": { "type": "string", "format": "uri" }
+                  }
+                },
+                "published_at": { "type": "string", "format": "date" },
+                "stance": { "type": "string", "enum": ["favorable", "contrary", "reporting"] },
+                "decisive": { "type": "boolean", "description": "true para a janela decisiva exibida ao leitor." }
+              }
+            }
+          },
+          "explanation": {
+            "type": "object",
+            "required": ["text", "generated_by", "citations"],
+            "additionalProperties": false,
+            "properties": {
+              "text": { "type": "string", "minLength": 1 },
+              "generated_by": { "type": "string", "enum": ["template", "llm"] },
+              "citations": {
+                "type": "array",
+                "items": { "type": "string" },
+                "minItems": 1,
+                "description": "URLs ou ids das evidencias citadas."
+              }
+            }
+          },
+          "uncertainty_note": { "type": "string" }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["pending_items", "publication_allowed"],
+      "additionalProperties": false,
+      "properties": {
+        "pending_items": { "type": "integer", "minimum": 0 },
+        "publication_allowed": { "type": "boolean" }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": ["blocked", "full_text_retention"],
+      "additionalProperties": false,
+      "properties": {
+        "blocked": { "const": false },
+        "full_text_retention": { "const": "transient" }
+      }
+    }
+  }
+}
